@@ -1,7 +1,9 @@
 
     <?php
 
-        $X = array (10, 20, 30, 40, 50, 60);
+        $X = [10, 20, 30, 40, 50, 60];
+
+        array_walk($X, function($X, $posicion){echo $X . PHP_EOL;});
 
         $midaArray = count($X);
 
