@@ -2,27 +2,15 @@
     <?php
 
         $ciutats = ["Melbourn","Morella","Munich"];
+        $value = 'M';
 
-        function caracters($ciutats, $caracter){
-            $cerca = array_filter($ciutats, function($ciutat) use ($caracter){
-                return stripos($ciutat, $caracter) !== false;
-            });
-            
-            return count($cerca) === count($ciutats);
-        }
-
-
-        
-        $caracter = "m";
-       
-        $resultat = caracters($ciutats, $caracter);
-        var_dump($resultat);
-
-        echo "<br>";
-
-        $caractError = "r";
-
-        $resultatError = caracters($ciutats, $caractError);
-        var_dump($resultatError);
+        foreach($ciutats as $ciutat => $value):
+            if (str_contains($ciutats, $value)):
+                echo "Les ciutats contenen la lletra " . $value;
+            else:
+                echo "Les ciutats no contenen la lletra " . $value;
+            endif;
+        endforeach;
+    
 
     ?>
