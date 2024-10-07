@@ -3,20 +3,26 @@
 
         $ciutats = ["Melbourn","Morella","Munich"];
         $value = 'M';
-        $respon = false;
 
+
+        function valorIgual($ciutats, $value){
         foreach($ciutats as $ciutat):
-            if (str_contains($ciutat, $value)){
-                $respon = true;
+            if (str_contains($ciutat, $value) === false){
+                return false;
                 break;
             }
             endforeach;
 
-        if ($respon):
-            echo "Les ciutats contenen la lletra " . $value;
-        else:
-            echo "Les ciutats no contenen la lletra " . $value;
-        endif;
+            return true;
+        }
+
+        $resultat = valorIgual($ciutats, $value);
+        var_dump($resultat);
+
+        $value1 = 'e';
+        $resultat = valorIgual($ciutats, $value1);
+        var_dump($resultat);
+
     
 
     ?>

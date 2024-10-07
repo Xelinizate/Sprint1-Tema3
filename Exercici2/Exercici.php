@@ -10,7 +10,15 @@
         echo "La mida inicial de l'array es: $midaArray<br>";
 
         unset($X[3]);
-        echo(count($X));
+
+        $X = array_values($X);
+        echo "Nombre d'elements reals " . count($X) . "<br>";
+
+        array_walk($X, function($X, $posicion){
+            echo $X . PHP_EOL;
+        });
+
+    
 
 
 
